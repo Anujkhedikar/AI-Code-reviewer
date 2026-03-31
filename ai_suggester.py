@@ -34,8 +34,7 @@ Code: {code_string}"""
 def get_ai_suggestion(code_to_review):
     formatted_prompt = prompt_template.format(code_string=code_to_review)
     result = model.invoke(formatted_prompt)
-    print("\n--- AI TEACHER FEEDBACK ---")
-    print(result.content)
+    return result.content
 
 if __name__ == "__main__":
     get_ai_suggestion(code_string)
